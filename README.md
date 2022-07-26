@@ -10,6 +10,7 @@ This Readme contains only to the back end part and the front end part can be fou
 | --------- | ------- | ---------------------------------- | ------------------------------------------------------------------------------------------------ |
 | AUTH      | visitor | sign up for an account             | have a personal profile with a picture                                                           |
 | AUTH      | visitor | sign up for an account             | create, like and comment on posts                                                                |
+| NAVBAR    | user    | access relevant links of the site  | so that I can navigate to the different pages of the website                                     |
 | PROFILES  | user    | view a profile                     | learn more about the user and see all their posts  		                                      |
 | PROFILES  | user    | edit my profile                    | keep the information about myself up to date                                                     |
 | POSTS     | visitor | view list of posts from users      | stay up to date with the most recent posts                                                       |
