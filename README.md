@@ -24,6 +24,10 @@ This Readme contains only to the back end part and the front end part can be fou
 | COMMENTS  | user    | edit or delete my comment          | correct mistakes or remove comments I regret                                                     |
 
 ## Wireframes
+![wireframe of landing page when logged out](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658832818/Landing_Page_logged_out_jdggqu.png)
+![wireframe of landing page when logged in](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658832819/Landing_Page_logged_in_aqg4f7.png)
+![wireframe of add post page](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658832818/Add_Post_ri7pwd.png)
+![wireframe of profile page](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658832818/Profile_page_grdgra.png)
 
 ## Color palette
 ![image of color palette from a website](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658825176/COLOR_PALETTE_motwus.png)
