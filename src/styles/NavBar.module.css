@@ -4,7 +4,9 @@
 
 .Link {
     color: #D8D8D8;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
+    padding: 0 0.5rem;
+    text-decoration: none;
 }
 
 .Link:hover {
@@ -22,6 +24,10 @@
 
 .Form {
     background-color: #D8D8D8;
+}
+
+.Active {
+    text-decoration-line: underline;
 }
 
 .bn3 {

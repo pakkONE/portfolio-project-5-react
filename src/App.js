@@ -4,16 +4,27 @@ import { Route, Routes } from 'react-router-dom';
 import SignUpPage from './pages/auth/SignUpPage';
 import SignInPage from './pages/auth/SignInPage';
 import Home from './pages/auth/Home';
+import Container from 'react-bootstrap/esm/Container';
 
 function App() {
   return (
     <div className={styles.App}>
-      <NavBar />
-      <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route path='/signup' element={<SignUpPage />} />
-        <Route exact path='/signin' element={<SignInPage />} />
-      </Routes>
+      <Container className={styles.Main}>
+        <NavBar />
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route path='/signup' element={<SignUpPage />} />
+          <Route exact path='/signin' element={<SignInPage />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem", textAlign: "center" }}>
+                <h1>There's nothing here!</h1>
+              </main>
+            }
+          />
+        </Routes>
+      </Container>
     </div>
   );
 }

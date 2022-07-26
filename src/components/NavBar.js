@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import styles from '../styles/NavBar.module.css'
 import logo from '../logo.png'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -24,10 +24,10 @@ const NavBar = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
-                    <Form className="d-flex ms-auto">
+                    <Form className="d-flex ms-auto px-4">
                         <Form.Control
                             type="search"
-                            placeholder="Search posts and users"
+                            placeholder="Search posts or users"
                             className={`me-2 ${styles.Form}`}
                             aria-label="Search"
                         />
@@ -36,10 +36,17 @@ const NavBar = () => {
                     <Nav
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '120px' }}
-                    >
-                        <Nav.Link className={styles.Link}><Link to='/'>Home</Link></Nav.Link>
-                        <Nav.Link className={styles.Link}><Link to='/signup'>Sign up</Link></Nav.Link>
-                        <Nav.Link className={styles.Link}><Link to='/signin'>Sign in</Link></Nav.Link>
+                    > {userIsLoggedIn ? (<>
+                        <NavLink className={styles.Link} to='/'>Home</NavLink>
+                        <NavLink className={styles.Link} to='/createpost'>Add Post</NavLink>
+                        <NavLink className={styles.Link} to='/signout'>Sign Out</NavLink>
+                        <NavLink className={styles.Link} to='/profile'>Profile</NavLink>
+
+                    </>) : (<>
+                        <NavLink className={styles.Link} to='/'>Home</NavLink>
+                        <NavLink className={styles.Link} to='/signup'>Sign up</NavLink>
+                        <NavLink className={styles.Link} to='/signin'>Sign in</NavLink>
+                    </>)}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
