@@ -1,9 +1,10 @@
+import { Button } from "react-bootstrap";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello, this is my app!</h1>
+      <Button variant="primary">Testing that Bootstrap and Font Awesome Icons works! <i className="fas fa-heart" /></Button>
     </div>
   );
 }
