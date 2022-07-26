@@ -6,12 +6,13 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import styles from '../styles/NavBar.module.css'
 import logo from '../logo.png'
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
         <Navbar className={styles.NavBar} expand="md" fixed='top'>
             <Container fluid>
-                <Navbar.Brand href="#home" className={styles.Brand}>
+                <Navbar.Brand to='/' className={styles.Brand}>
                     <img
                         alt="logo"
                         src={logo}
@@ -36,9 +37,9 @@ const NavBar = () => {
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '120px' }}
                     >
-                        <Nav.Link href="#action1" className={styles.Link}>Home</Nav.Link>
-                        <Nav.Link href="#action2" className={styles.Link}>Sign up</Nav.Link>
-                        <Nav.Link href="#action2" className={styles.Link}>Sign in</Nav.Link>
+                        <Nav.Link className={styles.Link}><Link to='/'>Home</Link></Nav.Link>
+                        <Nav.Link className={styles.Link}><Link to='/signup'>Sign up</Link></Nav.Link>
+                        <Nav.Link className={styles.Link}><Link to='/signin'>Sign in</Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
