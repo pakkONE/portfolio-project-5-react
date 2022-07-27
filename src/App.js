@@ -1,10 +1,11 @@
-import styles from './App.module.css';
-import NavBar from './components/NavBar';
-import { Route, Routes } from 'react-router-dom';
-import SignUpPage from './pages/auth/SignUpPage';
-import SignInPage from './pages/auth/SignInPage';
-import Home from './pages/auth/Home';
-import Container from 'react-bootstrap/esm/Container';
+import styles from "./App.module.css";
+import NavBar from "./components/NavBar";
+import { Route, Routes } from "react-router-dom";
+import SignUpPage from "./pages/auth/SignUpPage";
+import SignInPage from "./pages/auth/SignInPage";
+import Home from "./pages/auth/Home";
+import Container from "react-bootstrap/esm/Container";
+import "./api/axiosDefaults";
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
       <Container className={styles.Main}>
         <NavBar />
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/signup' element={<SignUpPage />} />
-          <Route exact path='/signin' element={<SignInPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="signup" element={<SignUpPage />} />
+          <Route path="signin" element={<SignInPage />} />
           <Route
             path="*"
             element={
