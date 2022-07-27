@@ -35,19 +35,19 @@ const NavBar = () => {
                     </Form>
                     <Nav
                         className="mr-auto my-2 my-lg-0"
-                        style={{ maxHeight: '120px' }}
-                    > {userIsLoggedIn ? (<>
-                        <NavLink className={styles.Link} to='/'>Home</NavLink>
-                        <NavLink className={styles.Link} to='/createpost'>Add Post</NavLink>
-                        <NavLink className={styles.Link} to='/signout'>Sign Out</NavLink>
-                        <NavLink className={styles.Link} to='/profile'>Profile</NavLink>
-
-                    </>) : (<>
-                        <NavLink className={styles.Link} to='/'>Home</NavLink>
-                        <NavLink className={styles.Link} to='/signup'>Sign up</NavLink>
-                        <NavLink className={styles.Link} to='/signin'>Sign in</NavLink>
-                    </>)}
-                    </Nav>
+                        style={{ maxHeight: '100px' }}>
+                    {/* // {userIsLoggedIn ? (<>
+                    //     <NavLink className={styles.Link} to='/'>Home</NavLink>
+                    //     <NavLink className={styles.Link} to='/createpost'>Add Post</NavLink>
+                    //     <NavLink className={styles.Link} to='/signout'>Sign Out</NavLink>
+                    //     <NavLink className={styles.Link} to='/profile'>Profile</NavLink>
+                            {/* 
+                    // </>) : (<> */}
+                            <NavLink className={styles.Link} to='/'>Home</NavLink>
+                            <NavLink className={styles.Link} to='/signup'>Sign up</NavLink>
+                            <NavLink className={styles.Link} to='/signin'>Sign in</NavLink>
+                            {/* </>)} */}
+                        </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar >
