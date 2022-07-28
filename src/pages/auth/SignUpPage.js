@@ -5,10 +5,10 @@ import styles from "../../styles/SignUpPage.module.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
 import logo from "../../logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Alert } from "react-bootstrap";
 
 const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({
@@ -34,7 +34,7 @@ const SignUpPage = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
-      navigate("signin");
+      navigate("/signin");
     } catch (error) {
       setErrors(error.response?.data);
     }
@@ -45,7 +45,7 @@ const SignUpPage = () => {
       <Container fluid className="p-3">
         <Row className="justify-content-center">
           <Col md={10} className={`p-3 my-3 bg-light rounded-4 ${styles.Form}`}>
-            <Container className="m-1 py-2 px-5">
+            <Container className="m-1 py-2 px-5 text-center">
               <h1>
                 <img height={50} width={50} src={logo} alt="logo"></img> Welcome
                 to SportsTalk
