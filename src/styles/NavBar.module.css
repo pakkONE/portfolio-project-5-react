@@ -5,7 +5,7 @@
 .Link {
   color: #d8d8d8;
   font-size: 1.25rem;
-  padding: 0 0.5rem;
+  padding: 0.5rem 0.5rem;
   text-decoration: none;
 }
 
@@ -16,6 +16,7 @@
 .Link img {
   border-radius: 50%;
   border: 0px none #252424;
+  margin: 0.2rem 0.5rem;
 }
 
 .Brand {
@@ -31,7 +32,7 @@ div > Button {
   background-color: #252424 !important;
   margin: 0 !important;
   padding: 0 !important;
-  tab-size: 1rem;
+  border: none !important;
 }
 
 .Form {

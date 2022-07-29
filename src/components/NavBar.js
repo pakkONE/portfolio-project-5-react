@@ -26,11 +26,11 @@ const NavBar = () => {
 
     const loggedInNavBar = (
         <>
-            <NavLink className={styles.Link} to='/'>Home</NavLink>
+            <NavLink className={styles.Link} to='/'>Feed</NavLink>
             <NavLink className={styles.Link} to='/createpost'>Add Post</NavLink>
             <Dropdown>
                 <Dropdown.Toggle id="dropdown-autoclose-true" className={`${styles.Link} custom-dd`}>
-                    <img height={40} width={40} alt='profile pic' src={currentUser?.profile_image} />{currentUser?.name}
+                    <img height={40} width={40} alt='profile pic' src={currentUser?.profile_image} />{currentUser?.username}
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
@@ -44,7 +44,7 @@ const NavBar = () => {
 
     const loggedOutNavBar = (
         <>
-            <NavLink className={styles.Link} to='/'>Home</NavLink>
+            <NavLink className={styles.Link} to='/'>Feed</NavLink>
             <NavLink className={styles.Link} to='/signup'>Sign up</NavLink>
             <NavLink className={styles.Link} to='/signin'>Sign in</NavLink>
         </>
