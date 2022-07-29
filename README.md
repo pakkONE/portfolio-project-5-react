@@ -1,43 +1,52 @@
 # PP5 REACT
 
 ## Project description
+
 This unnamed project (for now) is a content sharing platform that connects people from all four corners of the earth to share knowledge in what they are passionate about. The platform is powered by a Django REST API and React.
 This Readme contains only to the back end part and the front end part can be found [here](https://github.com/pakkONE/portfolio-project-5-api/blob/main/README.md)
 
 ## User stories
 
-| Category  | as a    | I would like to                    | so that I can                                                                                    |
-| --------- | ------- | ---------------------------------- | ------------------------------------------------------------------------------------------------ |
-| AUTH      | visitor | sign up for an account             | have a personal profile with a picture                                                           |
-| AUTH      | visitor | sign up for an account             | create, like and comment on posts                                                                |
-| NAVBAR    | user    | access relevant links of the site  | so that I can navigate to the different pages of the website                                     |
-| PROFILES  | user    | view a profile                     | learn more about the user and see all their posts  		                                      |
-| PROFILES  | user    | edit my profile                    | keep the information about myself up to date                                                     |
-| POSTS     | visitor | view list of posts from users      | stay up to date with the most recent posts                                                       |
-| POSTS     | visitor | view a specific post               | see the engagement  				                                                              |
-| POSTS     | visitor | search for a post                  | find a post by title or author		                                                              |
-| POSTS     | visitor | keep scrolling to fetch more posts | have a smooth browsing experience                                                                |
-| POSTS     | user    | create a post                      | share my ideas with the community                                                                |
-| POSTS     | user    | edit and delete my post            | correct mistakes or remove posts I regret                                                        |
-| LIKES     | user    | like a post that I enjoy           | let the author know about that                                                                   |
-| LIKES     | user    | unlike a post                      | regret my like or correct a mistaken like                                                        |
-| COMMENTS  | user    | comment on a post                  | share my thoughts on about the topic                                                             |
-| COMMENTS  | user    | edit or delete my comment          | correct mistakes or remove comments I regret                                                     |
+| Category | as a    | I would like to                    | so that I can                                                |
+| -------- | ------- | ---------------------------------- | ------------------------------------------------------------ |
+| AUTH     | visitor | sign up for an account             | have a personal profile with a picture                       |
+| AUTH     | visitor | sign up for an account             | create, like and comment on posts                            |
+| NAVBAR   | user    | access relevant links of the site  | so that I can navigate to the different pages of the website |
+| PROFILES | user    | view a profile                     | learn more about the user and see all their posts            |
+| PROFILES | user    | edit my profile                    | keep the information about myself up to date                 |
+| POSTS    | visitor | view list of posts from users      | stay up to date with the most recent posts                   |
+| POSTS    | visitor | view a specific post               | see the engagement                                           |
+| POSTS    | visitor | search for a post                  | find a post by title or author                               |
+| POSTS    | visitor | keep scrolling to fetch more posts | have a smooth browsing experience                            |
+| POSTS    | user    | create a post                      | share my ideas with the community                            |
+| POSTS    | user    | edit and delete my post            | correct mistakes or remove posts I regret                    |
+| LIKES    | user    | like a post that I enjoy           | let the author know about that                               |
+| LIKES    | user    | unlike a post                      | regret my like or correct a mistaken like                    |
+| COMMENTS | user    | comment on a post                  | share my thoughts on about the topic                         |
+| COMMENTS | user    | edit or delete my comment          | correct mistakes or remove comments I regret                 |
 
 ## Wireframes
+
 ![wireframe of landing page when logged out](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658832818/Landing_Page_logged_out_jdggqu.png)
 ![wireframe of landing page when logged in](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658832819/Landing_Page_logged_in_aqg4f7.png)
 ![wireframe of add post page](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658832818/Add_Post_ri7pwd.png)
 ![wireframe of profile page](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658832818/Profile_page_grdgra.png)
 
 ## Color palette
+
 ![image of color palette from a website](https://res.cloudinary.com/dv6cgny0t/image/upload/v1658825176/COLOR_PALETTE_motwus.png)
+
 - I used this color palette because it fit well with how I intended the logo design to be.
 
-## Sprints
+## Sprints (link to my KANBAN can be found [here](https://github.com/users/pakkONE/projects/3/views/1))
+
 - ### Sprint 1 (Navbar)
+- ### Sprint 2 (Signup/Signin pages)
+- ### Sprint 3 (Posts)
 
 ## CREDITS
+
 - Logo created by using [this template on Canva.com](https://www.canva.com/p/templates/EAE5TZbIJzE-tan-brown-cream-black-white-health-wellness-fitness-chiropractic-logo/)
 - Favicon generated by [https://favicon.io/](https://favicon.io/favicon-converter/)
 - Color Palette generated by [Colormind](http://colormind.io/image/) using the logo as inspiration
+- CSS Loading spinner is taken from [https://cssloaders.github.io/](https://cssloaders.github.io/) - _[view licens agreement here](https://github.com/vineethtrv/css-loader/blob/master/LICENSE)_
