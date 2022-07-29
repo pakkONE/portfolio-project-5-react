@@ -7,8 +7,39 @@ import Button from 'react-bootstrap/Button'
 import styles from '../styles/NavBar.module.css'
 import logo from '../logo.png'
 import { NavLink } from "react-router-dom";
+import { useCurrentUser, useSetCurrentUser } from '../contexts/UserContext'
+import axios from 'axios'
 
 const NavBar = () => {
+    const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
+
+    const handleSignOut = async () => {
+        try {
+            await axios.post('dj-rest-auth/logout/')
+            setCurrentUser(null)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const loggedInNavBar = (
+        <>
+            <NavLink className={styles.Link} to='/'>Home</NavLink>
+            <NavLink className={styles.Link} to='/createpost'>Add Post</NavLink>
+            <NavLink className={styles.Link} to='/' onClick={handleSignOut}>Sign Out</NavLink>
+            <NavLink className={styles.Link} to='/profile'>Profile</NavLink>
+        </>
+    )
+
+    const loggedOutNavBar = (
+        <>
+            <NavLink className={styles.Link} to='/'>Home</NavLink>
+            <NavLink className={styles.Link} to='/signup'>Sign up</NavLink>
+            <NavLink className={styles.Link} to='/signin'>Sign in</NavLink>
+        </>
+    )
+
     return (
         <Navbar className={styles.NavBar} expand="md" fixed='top'>
             <Container fluid>
@@ -36,18 +67,8 @@ const NavBar = () => {
                     <Nav
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}>
-                    {/* // {userIsLoggedIn ? (<>
-                    //     <NavLink className={styles.Link} to='/'>Home</NavLink>
-                    //     <NavLink className={styles.Link} to='/createpost'>Add Post</NavLink>
-                    //     <NavLink className={styles.Link} to='/signout'>Sign Out</NavLink>
-                    //     <NavLink className={styles.Link} to='/profile'>Profile</NavLink>
-                            {/* 
-                    // </>) : (<> */}
-                            <NavLink className={styles.Link} to='/'>Home</NavLink>
-                            <NavLink className={styles.Link} to='/signup'>Sign up</NavLink>
-                            <NavLink className={styles.Link} to='/signin'>Sign in</NavLink>
-                            {/* </>)} */}
-                        </Nav>
+                        {currentUser ? loggedInNavBar : loggedOutNavBar}
+                    </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar >

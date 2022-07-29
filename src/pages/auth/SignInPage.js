@@ -9,8 +9,11 @@ import Alert from "react-bootstrap/Alert";
 import logo from "../../logo.png";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useSetCurrentUser } from '../../contexts/UserContext';
 
 const SignInPage = () => {
+    const setCurrentUser = useSetCurrentUser();
+
     const [signInData, setSignInData] = useState({
         username: '',
         password: '',
@@ -30,7 +33,8 @@ const SignInPage = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post('/dj-rest-auth/login/', signInData)
+            const { data } = await axios.post('/dj-rest-auth/login/', signInData)
+            setCurrentUser(data.user)
             navigate('/')
         } catch (error) {
             setErrors(error.response?.data)
