@@ -1,51 +1,63 @@
 .NavBar {
-    background-color: #252424;
+  background-color: #252424;
 }
 
 .Link {
-    color: #D8D8D8;
-    font-size: 1.25rem;
-    padding: 0 0.5rem;
-    text-decoration: none;
+  color: #d8d8d8;
+  font-size: 1.25rem;
+  padding: 0 0.5rem;
+  text-decoration: none;
 }
 
 .Link:hover {
-    color: #858585;
+  color: #858585;
+}
+
+.Link img {
+  border-radius: 50%;
+  border: 0px none #252424;
 }
 
 .Brand {
-    color: #D8D8D8;
-    font-size: 1.75rem;
+  color: #d8d8d8;
+  font-size: 1.75rem;
 }
 
 .Brand:hover {
-    color: #858585;
+  color: #858585;
+}
+
+div > Button {
+  background-color: #252424 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  tab-size: 1rem;
 }
 
 .Form {
-    background-color: #D8D8D8;
+  background-color: #d8d8d8;
 }
 
 .Active {
-    text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .bn3 {
-    display: inline-block;
-    padding: 0.4em 1.25em;
-    margin: 0 0.1em 0.1em 0;
-    border: 0.16em solid #858585;
-    background-color: #D8D8D8;
-    border-radius: 2em;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: #252424;
-    text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
-    text-align: center;
-    transition: all 0.2s;
-  }
-  
-  .bn3:hover {
-    color: #D8D8D8;
-    background-color: #747474;
-  }
+  display: inline-block;
+  padding: 0.4em 1.25em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid #858585;
+  background-color: #d8d8d8;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #252424;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.bn3:hover {
+  color: #d8d8d8;
+  background-color: #747474;
+}

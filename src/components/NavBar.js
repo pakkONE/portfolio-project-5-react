@@ -9,6 +9,7 @@ import logo from '../logo.png'
 import { NavLink } from "react-router-dom";
 import { useCurrentUser, useSetCurrentUser } from '../contexts/UserContext'
 import axios from 'axios'
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
@@ -27,8 +28,17 @@ const NavBar = () => {
         <>
             <NavLink className={styles.Link} to='/'>Home</NavLink>
             <NavLink className={styles.Link} to='/createpost'>Add Post</NavLink>
-            <NavLink className={styles.Link} to='/' onClick={handleSignOut}>Sign Out</NavLink>
-            <NavLink className={styles.Link} to='/profile'>Profile</NavLink>
+            <Dropdown>
+                <Dropdown.Toggle id="dropdown-autoclose-true" className={`${styles.Link} custom-dd`}>
+                    <img height={40} width={40} alt='profile pic' src={currentUser?.profile_image} />{currentUser?.name}
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item as={NavLink} to={`/profiles/${currentUser?.profile_id}`}>View Profile</Dropdown.Item>
+                    <Dropdown.Item as={NavLink} to='/'>Edit Profile</Dropdown.Item>
+                    <Dropdown.Item as={NavLink} to='/' onClick={handleSignOut}>Sign out</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
         </>
     )
 
@@ -66,7 +76,7 @@ const NavBar = () => {
                     </Form>
                     <Nav
                         className="mr-auto my-2 my-lg-0"
-                        style={{ maxHeight: '100px' }}>
+                        style={{ maxHeight: '100px', paddingRight: '5rem' }}>
                         {currentUser ? loggedInNavBar : loggedOutNavBar}
                     </Nav>
                 </Navbar.Collapse>
