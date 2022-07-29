@@ -3,7 +3,7 @@ import NavBar from "./components/NavBar";
 import { Route, Routes } from "react-router-dom";
 import SignUpPage from "./pages/auth/SignUpPage";
 import SignInPage from "./pages/auth/SignInPage";
-import Home from "./pages/auth/Home";
+import Home from "./pages/Home";
 import Container from "react-bootstrap/esm/Container";
 import "./api/axiosDefaults";
 
