@@ -27,7 +27,7 @@ const NavBar = () => {
     const loggedInNavBar = (
         <>
             <NavLink className={styles.Link} to='/'>Feed</NavLink>
-            <NavLink className={styles.Link} to='/createpost'>Add Post</NavLink>
+            <NavLink className={styles.Link} to='/posts/create'>Add Post</NavLink>
             <Dropdown>
                 <Dropdown.Toggle id="dropdown-autoclose-true" className={`${styles.Link} custom-dd`}>
                     <img height={40} width={40} alt='profile pic' src={currentUser?.profile_image} />{currentUser?.username}
