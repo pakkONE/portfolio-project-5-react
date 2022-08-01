@@ -44,6 +44,7 @@ const CreatePostPage = () => {
         ...postData,
         image: URL.createObjectURL(event.target.files[0]),
       });
+      console.log(image);
     }
   };
 
@@ -59,12 +60,13 @@ const CreatePostPage = () => {
     try {
       const { data } = await axiosReq.post("/posts/", formData);
       navigate(`/posts/${data.id}`);
-    } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
+    } catch (error) {
+      console.log(error);
+      if (error.response?.status !== 401) {
+        setErrors(error.response?.data);
       }
     }
+    console.log(imageInput.current.files[0]);
   };
 
   return (
@@ -111,6 +113,7 @@ const CreatePostPage = () => {
                   <Form.Control
                     id="image-upload"
                     type="file"
+                    name="image"
                     hidden
                     accept="image/*"
                     onChange={handleChangeImage}
