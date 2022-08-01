@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Container from "react-bootstrap/esm/Container";
 import "./api/axiosDefaults";
 import CreatePostPage from "./pages/posts/CreatePostPage";
+import ViewPostPage from "./pages/posts/ViewPostPage";
 
 function App() {
   return (
@@ -17,11 +18,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="signup" element={<SignUpPage />} />
           <Route path="signin" element={<SignInPage />} />
-          <Route path="createpost" element={<CreatePostPage />} />
+          <Route path="posts" element={() => {}} />
+          <Route path="posts/:id" element={<ViewPostPage />} />
+          <Route path="posts/create" element={<CreatePostPage />} />
+          <Route path="profiles" element={() => {}} />
+          <Route path="profiles/:id" element={() => {}} />
           <Route
             path="*"
             element={
-              <main style={{ padding: "3rem", textAlign: "center" }}>
+              <main style={{ padding: "4rem", textAlign: "center" }}>
                 <h1>There's nothing here!</h1>
               </main>
             }
