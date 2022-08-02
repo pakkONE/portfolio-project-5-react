@@ -1,0 +1,15 @@
+.SearchForm input {
+  border-radius: 1rem;
+  color: #252424;
+  padding-left: 3rem;
+  margin: 1rem 6rem;
+  max-width: 85%;
+}
+
+.Icon {
+  position: absolute;
+  font-size: 1.2rem;
+  margin: 1rem 0rem;
+  padding: 0.6rem;
+  padding-left: 7rem;
+}

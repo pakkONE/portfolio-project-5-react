@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import styles from "../../styles/PostList.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 import PostDetail from "./PostDetail";
@@ -18,30 +20,42 @@ const PostList = ({ message }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get("/posts/");
+        const { data } = await axiosReq.get(`/posts/?search=${query}`);
         setPosts(data);
         setIsLoaded(true);
       } catch (error) {
         console.log(error);
       }
     };
-    const fetchSearch = async () => {
-      try {
-        const { data } = await axiosReq.get(`/posts/?search=${query}`);
-        setPosts(data);
-      } catch (error) {
-        console.log(error);
-      }
-      fetchSearch();
-    };
+
     setIsLoaded(false);
-    fetchPosts();
+    const timer = setTimeout(() => {
+      fetchPosts();
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [query]);
 
   return (
     <div>
       <Row className="h-100">
         <Col className="p-2">
+          <i className={`fas fa-search ${styles.Icon}`} />
+          <Form
+            className={styles.SearchForm}
+            onSubmit={(event) => event.preventDefault()}
+          >
+            <Form.Control
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              type="text"
+              className="mr-sm-2"
+              placeholder="Search posts or usernames"
+            />
+          </Form>
+
           {isLoaded ? (
             <>
               {posts.results.length ? (
