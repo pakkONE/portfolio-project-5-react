@@ -9,9 +9,9 @@ class ErrorBoundary extends React.Component {
     return { errorMessage: error.toString() };
   }
 
-  componentDidCatch(error, info) {
-    this.logErrorToServices(error.toString(), info.componentStack);
-  }
+  // componentDidCatch(error, info) {
+  //   this.logErrorToServices(error.toString(), info.componentStack);
+  // }
 
   render() {
     if (this.state.errorMessage) {
