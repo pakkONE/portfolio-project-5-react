@@ -1,9 +1,9 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
-import styles from "../styles/MoreDropdown.module.css";
+import styles from "../styles/EditDropdown.module.css";
 import { useNavigate } from "react-router-dom";
 
-const EditIcon = React.forwardRef(({ onClick }, ref) => (
+export const EditIcon = React.forwardRef(({ onClick }, ref) => (
   <i
     className="far fa-edit"
     ref={ref}
