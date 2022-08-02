@@ -26,11 +26,11 @@ const ViewPostPage = () => {
 
   return (
     <div>
-      <Container fluid className="p-3">
+      <Container fluid className="p-5">
         <Row className="justify-content-center">
-          <Col md={10} className={`p-3 my-3 bg-light rounded-4`}>
-            <Container className="m-1 py-2 px-5 text-center">
-              <PostDetail {...post.results[0]} setPost={setPost} PostDetail />
+          <Col md={10} className={`p-5 my-0 bg-light rounded-4`}>
+            <Container className="m-0 text-center">
+              <PostDetail {...post.results[0]} setPost={setPost} ViewPostPage />
               <Container>Comments</Container>
             </Container>
           </Col>
