@@ -3,13 +3,12 @@ import NavBar from "./components/NavBar";
 import { Route, Routes } from "react-router-dom";
 import SignUpPage from "./pages/auth/SignUpPage";
 import SignInPage from "./pages/auth/SignInPage";
-import Home from "./pages/Home";
 import Container from "react-bootstrap/esm/Container";
 import "./api/axiosDefaults";
 import CreatePostPage from "./pages/posts/CreatePostPage";
 import ViewPostPage from "./pages/posts/ViewPostPage";
 import PostList from "./pages/posts/PostList";
-import { useCurrentUser } from "./contexts/UserContext";
+import EditPostPage from "./pages/posts/EditPostPage";
 
 function App() {
   return (
@@ -17,24 +16,15 @@ function App() {
       <Container className={styles.Main}>
         <NavBar />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <PostList message="No results found. Please enter another keyword for your search." />
-            }
-          />
-          <Route path="signup" element={<SignUpPage />} />
-          <Route path="signin" element={<SignInPage />} />
-          <Route
-            path="posts"
-            element={
-              <PostList message="No results found. Please enter another keyword for your search." />
-            }
-          />
-          <Route path="posts/:id" element={<ViewPostPage />} />
-          <Route path="posts/create" element={<CreatePostPage />} />
-          <Route path="profiles" element={() => {}} />
-          <Route path="profiles/:id" element={() => {}} />
+          <Route path="/" element={<PostList />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/posts" element={<PostList />} />
+          <Route path="/posts/:id" element={<ViewPostPage />} />
+          <Route path="/posts/:id/edit" element={<EditPostPage />} />
+          <Route path="/posts/create" element={<CreatePostPage />} />
+          <Route path="/profiles" element={() => {}} />
+          <Route path="/profiles/:id" element={() => {}} />
           <Route
             path="*"
             element={
