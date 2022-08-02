@@ -1,0 +1,31 @@
+.Post {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.Figure {
+  font-size: 1.1rem;
+}
+
+.Img {
+  object-fit: fill;
+}
+
+.Heart {
+  color: #f85032;
+}
+
+.Heart:hover {
+  color: #2142b2;
+}
+
+.HeartOutline:hover {
+  color: #f85032;
+}
+
+i {
+  font-size: 1.2rem;
+}
