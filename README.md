@@ -46,7 +46,7 @@ This Readme contains only to the back end part and the front end part can be fou
 
 ## Bugs
 
-- I couldn't upload images from the front end to the API and could for the life of me not understand why. After two days of debugging I finally found out that I had not returned a value on the function validating the image in the API.
+- I couldn't upload images from the front end to the API and could for the life of me not understand why. I downgraded React, react-bootstrap and react-router-dom and the whole API to older versions just to make sure that it would work. After two days of debugging I finally found out that I had not returned a value on the function validating the image in the API.
 
 ## CREDITS
 
