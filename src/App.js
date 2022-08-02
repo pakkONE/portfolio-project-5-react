@@ -8,6 +8,8 @@ import Container from "react-bootstrap/esm/Container";
 import "./api/axiosDefaults";
 import CreatePostPage from "./pages/posts/CreatePostPage";
 import ViewPostPage from "./pages/posts/ViewPostPage";
+import PostList from "./pages/posts/PostList";
+import { useCurrentUser } from "./contexts/UserContext";
 
 function App() {
   return (
@@ -15,10 +17,20 @@ function App() {
       <Container className={styles.Main}>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <PostList message="No results found. Please enter another keyword for your search." />
+            }
+          />
           <Route path="signup" element={<SignUpPage />} />
           <Route path="signin" element={<SignInPage />} />
-          <Route path="posts" element={() => {}} />
+          <Route
+            path="posts"
+            element={
+              <PostList message="No results found. Please enter another keyword for your search." />
+            }
+          />
           <Route path="posts/:id" element={<ViewPostPage />} />
           <Route path="posts/create" element={<CreatePostPage />} />
           <Route path="profiles" element={() => {}} />
