@@ -56,7 +56,7 @@ const NavBar = () => {
           <Dropdown.Item as={NavLink} to={`/profiles/${profile_id}/edit`}>
             Edit Profile
           </Dropdown.Item>
-          <Dropdown.Item as={NavLink} to="/signout" onClick={handleSignOut}>
+          <Dropdown.Item as={NavLink} to="/" onClick={handleSignOut}>
             Sign out
           </Dropdown.Item>
         </Dropdown.Menu>
