@@ -2,7 +2,11 @@ import React from "react";
 import styles from "../styles/Spinner.module.css";
 
 const Spinner = () => {
-  return <span className={styles.loader}></span>;
+  return (
+    <div className="align-items-center text-center">
+      <span className={styles.loader}></span>
+    </div>
+  );
 };
 
 export default Spinner;

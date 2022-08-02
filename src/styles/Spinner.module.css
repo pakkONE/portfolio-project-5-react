@@ -3,6 +3,7 @@
     height: 3rem;
     border-radius: 50%;
     display: inline-block;
+    margin-right: auto;
     position: relative;
     border: 10px solid;
     border-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.75) rgba(255, 255, 255, 1);
