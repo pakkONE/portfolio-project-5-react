@@ -143,7 +143,7 @@ const CreatePostPage = () => {
 
                 <Form.Group className="my-2">
                   <Form.Label>Tags</Form.Label>
-                  <Form.Control onChange={handleTags} name="tags">
+                  <Form.Select onChange={handleTags} name="tags">
                     <option>Select a tag</option>
                     <option value="FO">Football</option>
                     <option value="IH">Ice Hockey</option>
@@ -151,7 +151,7 @@ const CreatePostPage = () => {
                     <option value="TE">Tennis</option>
                     <option value="PA">Padel</option>
                     <option value="OT">Other</option>
-                  </Form.Control>
+                  </Form.Select>
                 </Form.Group>
 
                 <Button
