@@ -40,9 +40,13 @@ This Readme contains only to the back end part and the front end part can be fou
 
 ## Sprints (link to my KANBAN can be found [here](https://github.com/users/pakkONE/projects/3/views/1))
 
-- ### Sprint 1 (Navbar)
-- ### Sprint 2 (Signup/Signin pages)
-- ### Sprint 3 (Posts)
+- Sprint 1 (Navbar)
+- Sprint 2 (Signup/Signin pages)
+- Sprint 3 (Posts)
+
+## Bugs
+
+- I couldn't upload images from the front end to the API and could for the life of me not understand why. After two days of debugging I finally found out that I had not returned a value on the function validating the image in the API.
 
 ## CREDITS
 
