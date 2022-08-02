@@ -27,7 +27,7 @@ const PostDetail = (props) => {
     image,
     updated_at,
     ViewPostPage,
-    setPost,
+    setPosts,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -36,7 +36,7 @@ const PostDetail = (props) => {
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
-      setPost((prevPosts) => ({
+      setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
@@ -51,8 +51,8 @@ const PostDetail = (props) => {
 
   const handleUnlike = async () => {
     try {
-      const { data } = await axiosRes.delete(`/likes/${like_id}`);
-      setPost((prevPosts) => ({
+      await axiosRes.delete(`/likes/${like_id}`);
+      setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
@@ -77,7 +77,7 @@ const PostDetail = (props) => {
                   {owner}
                 </Link>
                 <span>{updated_at}</span>
-                {is_owner && "..."}
+                {is_owner && ViewPostPage && "..."}
               </Figure>
             </Card.Body>
             <Link to={`/posts/${id}`}>
@@ -93,9 +93,8 @@ const PostDetail = (props) => {
               {content && <Card.Text>{content}</Card.Text>}
               {is_owner ? (
                 <OverlayTrigger
-                  placement="bottom"
                   overlay={
-                    <Tooltip>
+                    <Tooltip placement="bottom">
                       You <strong>can't</strong> like your own posts.
                     </Tooltip>
                   }
@@ -112,9 +111,8 @@ const PostDetail = (props) => {
                 </span>
               ) : (
                 <OverlayTrigger
-                  placement="bottom"
                   overlay={
-                    <Tooltip>
+                    <Tooltip placement="bottom">
                       You need to <strong>log in</strong> to like a post!
                     </Tooltip>
                   }
