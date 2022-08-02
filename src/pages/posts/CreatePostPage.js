@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { Alert } from "react-bootstrap";
 
 const CreatePostPage = () => {
   const [errors, setErrors] = useState({});
@@ -118,6 +119,11 @@ const CreatePostPage = () => {
                   ref={imageInput}
                 />
               </Form.Group>
+              {errors.image?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
               <div className="my-2 p-3">
                 <Form.Group>
@@ -140,6 +146,11 @@ const CreatePostPage = () => {
                     onChange={handleChange}
                   />
                 </Form.Group>
+                {errors.content?.map((message, idx) => (
+                  <Alert variant="warning" key={idx}>
+                    {message}
+                  </Alert>
+                ))}
 
                 <Form.Group className="my-2">
                   <Form.Label>Tags</Form.Label>
@@ -153,6 +164,11 @@ const CreatePostPage = () => {
                     <option value="OT">Other</option>
                   </Form.Select>
                 </Form.Group>
+                {errors.tags?.map((message, idx) => (
+                  <Alert variant="warning" key={idx}>
+                    {message}
+                  </Alert>
+                ))}
 
                 <Button
                   className={`${styles.Btn28} mt-3`}
