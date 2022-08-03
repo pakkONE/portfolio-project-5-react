@@ -49,20 +49,20 @@ export const ProfileEditDropdown = ({ id }) => {
           onClick={() => navigate(`/profiles/${id}/edit`)}
           aria-label="edit-profile"
         >
-          <i className="far fa-edit" /> edit profile
+          <i className="far fa-edit" /> Edit Profile
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => navigate(`/profiles/${id}/edit/username`)}
           aria-label="edit-username"
         >
-          <i className="fas fa-pen" />
+          <i className="fas fa-pencil-alt" />
           Change Username
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => navigate(`/profiles/${id}/edit/password`)}
           aria-label="edit-password"
         >
-          <i className="fas fa-lock" />
+          <i className="fas fa-unlock" />
           Change Password
         </Dropdown.Item>
       </Dropdown.Menu>
