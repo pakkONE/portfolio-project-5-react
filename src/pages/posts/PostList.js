@@ -10,12 +10,15 @@ import PostDetail from "./PostDetail";
 import Spinner from "../../components/Spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import { useCurrentUser } from "../../contexts/UserContext";
 
-const PostList = ({ message }) => {
+const PostList = () => {
   const [posts, setPosts] = useState({ results: [] });
   const [isLoaded, setIsLoaded] = useState(false);
 
   const [query, setQuery] = useState("");
+
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -24,7 +27,7 @@ const PostList = ({ message }) => {
         setPosts(data);
         setIsLoaded(true);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 
@@ -36,7 +39,7 @@ const PostList = ({ message }) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [query]);
+  }, [query, currentUser]);
 
   return (
     <div>
