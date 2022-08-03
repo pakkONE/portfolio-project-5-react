@@ -6,8 +6,8 @@ import styles from "../styles/NavBar.module.css";
 import logo from "../logo.png";
 import { NavLink } from "react-router-dom";
 import { useCurrentUser, useSetCurrentUser } from "../contexts/UserContext";
-import Dropdown from "react-bootstrap/Dropdown";
 import { axiosRes } from "../api/axiosDefaults";
+import { removeTokenTimestamp } from "../utils/utils";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -19,8 +19,9 @@ const NavBar = () => {
     try {
       await axiosRes.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -32,35 +33,12 @@ const NavBar = () => {
       <NavLink className={styles.Link} to="/posts/create">
         Create Post
       </NavLink>
-      <Dropdown>
-        <Dropdown.Toggle
-          id="dropdown-autoclose-true"
-          className={`${styles.Link} custom-dd`}
-        >
-          <img
-            height={40}
-            width={40}
-            alt="profile pic"
-            src={currentUser?.profile_image}
-          />
-          {currentUser?.username}
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item
-            as={NavLink}
-            to={`/profiles/${currentUser?.profile_id}`}
-          >
-            View Profile
-          </Dropdown.Item>
-          <Dropdown.Item as={NavLink} to={`/profiles/${profile_id}/edit`}>
-            Edit Profile
-          </Dropdown.Item>
-          <Dropdown.Item as={NavLink} to="/" onClick={handleSignOut}>
-            Sign out
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <NavLink className={styles.Link} to={`/profiles/${profile_id}`}>
+        My profile
+      </NavLink>
+      <NavLink onClick={handleSignOut} className={styles.Link} to="/">
+        Sign Out
+      </NavLink>
     </>
   );
 
