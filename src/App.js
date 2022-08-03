@@ -9,6 +9,10 @@ import CreatePostPage from "./pages/posts/CreatePostPage";
 import ViewPostPage from "./pages/posts/ViewPostPage";
 import PostList from "./pages/posts/PostList";
 import EditPostPage from "./pages/posts/EditPostPage";
+import ProfilePage from "./pages/profiles/ProfilePage";
+import ChangeUsernameForm from "./pages/profiles/ChangeUsernameForm";
+import ChangePasswordForm from "./pages/profiles/ChangePasswordForm";
+import EditProfileForm from "./pages/profiles/EditProfileForm";
 
 function App() {
   return (
@@ -23,8 +27,19 @@ function App() {
           <Route path="/posts/:id" element={<ViewPostPage />} />
           <Route path="/posts/:id/edit" element={<EditPostPage />} />
           <Route path="/posts/create" element={<CreatePostPage />} />
-          <Route path="/profiles" element={() => {}} />
-          <Route path="/profiles/:id" element={() => {}} />
+          <Route path="/profiles/:id" element={<ProfilePage />} />
+          <Route
+            path="/profiles/:id/edit/username"
+            element={<ChangeUsernameForm />}
+          />
+          <Route
+            path="/profiles/:id/edit/password"
+            element={<ChangePasswordForm />}
+          />
+          <Route
+            path="/profiles/:id/edit"
+            element={<EditProfileForm />}
+          />
           <Route
             path="*"
             element={
