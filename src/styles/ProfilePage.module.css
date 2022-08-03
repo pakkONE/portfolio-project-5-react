@@ -1,0 +1,13 @@
+.ProfileImage {
+  object-fit: cover;
+  height: 7.5rem;
+  width: 7.5rem;
+  margin: 0.25rem;
+}
+
+@media screen and (max-width: 991px) {
+  .ProfileImage {
+    width: 15.5rem;
+    height: 15.5rem;
+  }
+}
