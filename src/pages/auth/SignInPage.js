@@ -10,6 +10,7 @@ import logo from "../../logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/UserContext";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const SignInPage = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -35,10 +36,11 @@ const SignInPage = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
+      setTokenTimestamp(data);
       navigate("/");
     } catch (error) {
       setErrors(error.response?.data);
-      console.log(error);
+      // console.log(error);
     }
   };
 
