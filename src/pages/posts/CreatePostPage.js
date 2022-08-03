@@ -45,7 +45,6 @@ const CreatePostPage = () => {
         ...postData,
         image: URL.createObjectURL(event.target.files[0]),
       });
-      console.log(image);
     }
   };
 
@@ -62,12 +61,11 @@ const CreatePostPage = () => {
       const { data } = await axiosReq.post("/posts/", formData);
       navigate(`/posts/${data.id}`);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       if (error.response?.status !== 401) {
         setErrors(error.response?.data);
       }
     }
-    console.log(imageInput.current.files[0]);
   };
 
   return (
