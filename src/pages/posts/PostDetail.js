@@ -6,8 +6,9 @@ import Container from "react-bootstrap/Container";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Figure from "react-bootstrap/Figure";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/UserContext";
+import { EditDropdown } from "../../components/EditDropdown";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/PostDetail.module.css";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -32,6 +33,20 @@ const PostDetail = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const navigate = useNavigate();
+
+  const handleEdit = () => {
+    navigate(`/posts/${id}/edit/`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/posts/${id}/`);
+      navigate("/posts");
+    } catch (error) {
+      // console.log(error);
+    }
+  };
 
   const handleLike = async () => {
     try {
@@ -45,7 +60,7 @@ const PostDetail = (props) => {
         }),
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -61,25 +76,35 @@ const PostDetail = (props) => {
         }),
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
   return (
     <Row className="justify-content-center">
-      <Col md={10} className={`bg-light ${styles.Upload}`}>
+      <Col md={10} className={`bg-light rounded-4 ${styles.Upload}`}>
         <Container className="text-center">
           <Card className={styles.Post}>
-            <Card.Body className="d-flex">
-              <Figure className={styles.Figure}>
-                <Link to={`/profiles/${profile_id}`}>
-                  <Avatar src={profile_image} height={55} />
-                  {owner}
-                </Link>
-                <span>{updated_at}</span>
-                {is_owner && ViewPostPage && "..."}
-              </Figure>
-            </Card.Body>
+            <Figure className="d-flex">
+              <Link
+                className="p-3 d-flex flex-grow-1 align-items-center"
+                to={`/profiles/${profile_id}`}
+              >
+                <Avatar src={profile_image} height={55} />
+                {owner}
+              </Link>
+              <span className="p-3 d-flex align-items-center">
+                {updated_at}
+              </span>
+              <span className="p-1 d-flex align-items-center">
+                {is_owner && ViewPostPage && (
+                  <EditDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                  />
+                )}
+              </span>
+            </Figure>
             <Link to={`/posts/${id}`}>
               <Card.Img className={styles.Img} src={image} alt={title} />
             </Link>

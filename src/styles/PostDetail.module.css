@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.Main {
+  align-items: center;
+}
+
 .Figure {
   font-size: 1.1rem;
 }
@@ -16,6 +20,10 @@
 
 .Heart {
   color: #f85032;
+}
+
+.Link {
+  margin-left: auto;
 }
 
 .Heart:hover {
